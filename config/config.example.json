@@ -1,0 +1,7 @@
+{
+	"mongodburi": "mongodb://localhost/expressmvc",
+	"secretKey": "123",
+	"modules": [
+		"users-api"
+	]
+}

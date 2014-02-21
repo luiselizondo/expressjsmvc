@@ -1,0 +1,5 @@
+public/vendor
+node_modules
+data
+data/*
+config/config.json
