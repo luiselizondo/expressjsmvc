@@ -75,3 +75,20 @@ exports.postUser = function(req, res) {
 		}
 	});
 }
+
+exports.getLogin = function(req, res) {
+  res.render("login", {title: "Log in"});
+}
+
+exports.postLogin = function(req, res) {
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true
+  });
+}
+
+exports.getLogout = function(req, res) {
+  req.logout();
+  res.redirect("/login");
+}
