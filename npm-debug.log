@@ -1,0 +1,211 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/luis/.nvm/v0.10.21/bin/node',
+1 verbose cli   '/home/luis/.nvm/v0.10.21/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /home/luis/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /home/luis/.npm/1f1177db-tar.lock
+15 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+16 verbose lock tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz /home/luis/.npm/01725dc5-14174-0-3880125656723976-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+20 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+21 verbose tar unpack /home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+22 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+23 verbose lock tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package /home/luis/.npm/a287c7fb-14174-0-3880125656723976-package.lock
+24 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+25 verbose lock tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz /home/luis/.npm/01725dc5-14174-0-3880125656723976-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm extractEntry .npmignore
+29 silly gunzTarPerm extractEntry README.md
+30 silly gunzTarPerm extractEntry LICENSE
+31 silly gunzTarPerm extractEntry app.js
+32 silly gunzTarPerm extractEntry index.js
+33 silly gunzTarPerm extractEntry start.js
+34 silly gunzTarPerm extractEntry views/header.jade
+35 silly gunzTarPerm extractEntry views/layout.jade
+36 silly gunzTarPerm extractEntry views/scripts.jade
+37 silly gunzTarPerm extractEntry views/styles.jade
+38 silly gunzTarPerm extractEntry bin/expressmvc
+39 silly gunzTarPerm extractEntry bin/lib/install-modules
+40 silly gunzTarPerm extractEntry public/css/style.css
+41 silly gunzTarPerm extractEntry scripts/init-ubuntu
+42 silly gunzTarPerm extractEntry scripts/install-init-ubuntu.sh
+43 silly gunzTarPerm extractEntry scripts/iptables.rules
+44 silly gunzTarPerm extractEntry lib/expressmvc.js
+45 silly gunzTarPerm extractEntry lib/secure.js
+46 silly gunzTarPerm extractEntry lib/socket.js
+47 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+48 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+49 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+50 silly lockFile 01725dc5-14174-0-3880125656723976-tmp-tgz tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/tmp.tgz
+51 verbose tar pack [ '/home/luis/.npm/expressjsmvc/3.4.8/package.tgz',
+51 verbose tar pack   '/home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package' ]
+52 verbose tarball /home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+53 verbose folder /home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+54 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+55 verbose lock tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package /home/luis/.npm/a287c7fb-14174-0-3880125656723976-package.lock
+56 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+57 verbose lock tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz /home/luis/.npm/83456054-m-expressjsmvc-3-4-8-package-tgz.lock
+58 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+59 silly lockFile a287c7fb-14174-0-3880125656723976-package tar:///home/luis/tmp/npm-15675-gE5VdJKf/1393717214174-0.3880125656723976/package
+60 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+61 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+62 silly lockFile 79542236-s-npm-expressjsmvc-3-4-8-package /home/luis/.npm/expressjsmvc/3.4.8/package
+63 verbose lock /home/luis/.npm/expressjsmvc/3.4.8/package /home/luis/.npm/79542236-s-npm-expressjsmvc-3-4-8-package.lock
+64 silly lockFile 79542236-s-npm-expressjsmvc-3-4-8-package /home/luis/.npm/expressjsmvc/3.4.8/package
+65 silly lockFile 79542236-s-npm-expressjsmvc-3-4-8-package /home/luis/.npm/expressjsmvc/3.4.8/package
+66 verbose tar unpack /home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+67 silly lockFile a23c4267-s-npm-expressjsmvc-3-4-8-package tar:///home/luis/.npm/expressjsmvc/3.4.8/package
+68 verbose lock tar:///home/luis/.npm/expressjsmvc/3.4.8/package /home/luis/.npm/a23c4267-s-npm-expressjsmvc-3-4-8-package.lock
+69 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+70 verbose lock tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz /home/luis/.npm/83456054-m-expressjsmvc-3-4-8-package-tgz.lock
+71 silly gunzTarPerm modes [ '755', '644' ]
+72 silly gunzTarPerm extractEntry package.json
+73 silly gunzTarPerm extractEntry .npmignore
+74 silly gunzTarPerm extractEntry README.md
+75 silly gunzTarPerm extractEntry LICENSE
+76 silly gunzTarPerm extractEntry app.js
+77 silly gunzTarPerm extractEntry index.js
+78 silly gunzTarPerm extractEntry start.js
+79 silly gunzTarPerm extractEntry views/header.jade
+80 silly gunzTarPerm extractEntry views/layout.jade
+81 silly gunzTarPerm extractEntry views/scripts.jade
+82 silly gunzTarPerm extractEntry views/styles.jade
+83 silly gunzTarPerm extractEntry public/css/style.css
+84 silly gunzTarPerm extractEntry scripts/init-ubuntu
+85 silly gunzTarPerm extractEntry scripts/install-init-ubuntu.sh
+86 silly gunzTarPerm extractEntry scripts/iptables.rules
+87 silly gunzTarPerm extractEntry bin/expressmvc
+88 silly gunzTarPerm extractEntry bin/lib/install-modules
+89 silly gunzTarPerm extractEntry lib/expressmvc.js
+90 silly gunzTarPerm extractEntry lib/secure.js
+91 silly gunzTarPerm extractEntry lib/socket.js
+92 silly lockFile a23c4267-s-npm-expressjsmvc-3-4-8-package tar:///home/luis/.npm/expressjsmvc/3.4.8/package
+93 silly lockFile a23c4267-s-npm-expressjsmvc-3-4-8-package tar:///home/luis/.npm/expressjsmvc/3.4.8/package
+94 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+95 silly lockFile 83456054-m-expressjsmvc-3-4-8-package-tgz tar:///home/luis/.npm/expressjsmvc/3.4.8/package.tgz
+96 verbose chmod /home/luis/.npm/expressjsmvc/3.4.8/package.tgz 644
+97 verbose chown /home/luis/.npm/expressjsmvc/3.4.8/package.tgz [ 1000, 1000 ]
+98 silly lockFile 3a52ce78- .
+99 silly lockFile 3a52ce78- .
+100 silly publish { name: 'expressjsmvc',
+100 silly publish   description: 'An Express.js application organized in an MVC way with extra helpers and utilities',
+100 silly publish   version: '3.4.8',
+100 silly publish   author: { name: 'Luis Elizondo', email: 'lelizondo@gmail.com' },
+100 silly publish   scripts: { start: 'node start.js' },
+100 silly publish   keywords: [ 'express', 'framework', 'sinatra', 'web', 'mvc', 'expressmvc' ],
+100 silly publish   dependencies:
+100 silly publish    { connect: '2.12.0',
+100 silly publish      commander: '1.3.2',
+100 silly publish      'range-parser': '1.0.0',
+100 silly publish      mkdirp: '0.3.5',
+100 silly publish      cookie: '0.1.0',
+100 silly publish      'buffer-crc32': '0.2.1',
+100 silly publish      fresh: '0.2.1',
+100 silly publish      methods: '0.1.0',
+100 silly publish      send: '0.2.0',
+100 silly publish      'cookie-signature': '1.0.3',
+100 silly publish      'merge-descriptors': '0.0.2',
+100 silly publish      debug: '>= 0.7.3 < 1',
+100 silly publish      'git-wrapper2': '0.2.5' },
+100 silly publish   repository: { type: 'git', url: 'git://github.com/luiselizondo/expressmvc' },
+100 silly publish   engines: { node: '>= 0.8.0' },
+100 silly publish   main: 'index',
+100 silly publish   bin: { expressmvc: './bin/expressmvc' },
+100 silly publish   license: 'MIT',
+100 silly publish   readme: 'Express MVC is an Express.js framework organized in an MVC way with extra helpers and utilities.\n\nThe goal of ExpressMVC is to simplify common tasks and make your application more modular, but at the same time, not creating another framework or a different community. \n\n### Install\n\n\tnpm install -g expressjsmvc\n\n### Create your application\n\n\texpressmvc install application-name\n\n### Download the modules defined in expressmvc.json\n\t\n\texpressmvc install-modules\n\n### Install required packages\n\tcd application-name && npm install\n\n### Start your application\n\t\n\tnode start.js\n\n### Features\nExpressMVC offers some features out of the box that you might find interesting:\n\n#### Modular structure\nExpressMVC lets you organize your application in modules that you can reuse. This modules are organized in controllers, models and views and file to define your routes.\n\nStructure of a module\n\n\t/modules/blog\n\t\t/controllers\n\t\t\tindex.js <- This file contains your controller\n\t\t/models\n\t\t\tindex.js <- This file contains the models for your module\n\t\t/views\n\t\t\tblogPage.jade <- This file is a blog page\n\t\tindex.js <- Define your routes here\n\n#### Views separation\nWith ExpressMVC you can separate your views and package them into your modules. You can access your /views directory without having to use relative paths, example:\n\n\tinclude /layout\n\n#### Easy require for both modules, libraries and \nYou can require any module from other modules as long as you organize your modules in the propossed structure. See an example in the frontpage module.\n\n#### Event driven \nExpressMVC lets you bind events to the application and trigger them from anywhere really easy.\n\nExample\n\n\tvar include = require("include");\n\tvar app = include.app();\n\n\tapp.on("myevent", function(data) {\n\t\tconsole.log(data);\n\t})\n\n\tapp.emit("myevent", {title: "Hello World"});\n\n#### Bower ready\nThe framework comes out of the box with a bower file so you can run bower install and automatically include jQuery, Bootstrap, Backbone.js and Underscore.js\n\n#### Module package manager\nExpressMVC provides you with an easy way to define the needed modules by your application. Define the modules you need to download in expressmvc.json. We use git to download the modules so you need to have it installed first. All defined modules will be downloaded into the modules directory.\n\n#### Enable or disable modules easily\nForget about requiring your modules in your application, all you need to do is add them to the config.modules array and they will be enabled.\n\n### ToDo\n- download modules dependencies\n\n### License\nThe MIT License (MIT)\n\nCopyright (c) [2014] [Luis Elizondo]\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.',
+100 silly publish   readmeFilename: 'README.md',
+100 silly publish   bugs: { url: 'https://github.com/luiselizondo/expressmvc/issues' },
+100 silly publish   _id: 'expressjsmvc@3.4.8',
+100 silly publish   dist: { shasum: 'd43c0dd76af1f5f394b14d4ca86c46ccc468b9a6' },
+100 silly publish   _from: '.' }
+101 verbose url raw expressjsmvc
+102 verbose url resolving [ 'https://registry.npmjs.org/', './expressjsmvc' ]
+103 verbose url resolved https://registry.npmjs.org/expressjsmvc
+104 info trying registry request attempt 1 at 17:40:14
+105 http PUT https://registry.npmjs.org/expressjsmvc
+106 http 201 https://registry.npmjs.org/expressjsmvc
+107 verbose url raw expressjsmvc
+108 verbose url resolving [ 'https://registry.npmjs.org/', './expressjsmvc' ]
+109 verbose url resolved https://registry.npmjs.org/expressjsmvc
+110 info trying registry request attempt 1 at 17:40:14
+111 http GET https://registry.npmjs.org/expressjsmvc
+112 http 200 https://registry.npmjs.org/expressjsmvc
+113 verbose uploading [ 'expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834',
+113 verbose uploading   '/home/luis/.npm/expressjsmvc/3.4.8/package.tgz' ]
+114 verbose url raw expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+115 verbose url resolving [ 'https://registry.npmjs.org/',
+115 verbose url resolving   './expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834' ]
+116 verbose url resolved https://registry.npmjs.org/expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+117 info trying registry request attempt 1 at 17:40:15
+118 http PUT https://registry.npmjs.org/expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+119 http 403 https://registry.npmjs.org/expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+120 info trying registry request attempt 1 at 17:40:15
+121 http PUT https://registry.npmjs.org/expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+122 http 400 https://registry.npmjs.org/expressjsmvc/-/expressjsmvc-3.4.8.tgz/-rev/12-9d69f73200e7983f114ec50aef6ed834
+123 verbose bad json <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+123 verbose bad json <html><head>
+123 verbose bad json <title>400 Bad Request</title>
+123 verbose bad json </head><body>
+123 verbose bad json <h1>Bad Request</h1>
+123 verbose bad json <p>Your browser sent a request that this server could not understand.<br />
+123 verbose bad json </p>
+123 verbose bad json </body></html>
+124 error registry error parsing json
+125 error publish Error uploading package
+126 error SyntaxError: Unexpected token <
+126 error <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+126 error <html><head>
+126 error <title>400 Bad Request</title>
+126 error </head><body>
+126 error <h1>Bad Request</h1>
+126 error <p>Your browser sent a request that this server could not understand.<br />
+126 error </p>
+126 error </body></html>
+126 error
+126 error     at Object.parse (native)
+126 error     at RegClient.<anonymous> (/home/luis/.nvm/v0.10.21/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:238:23)
+126 error     at Request.self.callback (/home/luis/.nvm/v0.10.21/lib/node_modules/npm/node_modules/request/request.js:129:22)
+126 error     at Request.EventEmitter.emit (events.js:98:17)
+126 error     at Request.<anonymous> (/home/luis/.nvm/v0.10.21/lib/node_modules/npm/node_modules/request/request.js:873:14)
+126 error     at Request.EventEmitter.emit (events.js:117:20)
+126 error     at IncomingMessage.<anonymous> (/home/luis/.nvm/v0.10.21/lib/node_modules/npm/node_modules/request/request.js:824:12)
+126 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+126 error     at _stream_readable.js:920:16
+126 error     at process._tickCallback (node.js:415:13)
+127 error If you need help, you may report this log at:
+127 error     <http://github.com/isaacs/npm/issues>
+127 error or email it to:
+127 error     <npm-@googlegroups.com>
+128 error System Linux 3.11.0-17-generic
+129 error command "/home/luis/.nvm/v0.10.21/bin/node" "/home/luis/.nvm/v0.10.21/bin/npm" "publish"
+130 error cwd /home/luis/.nvm/v0.10.21/lib/node_modules/expressmvc
+131 error node -v v0.10.21
+132 error npm -v 1.3.11
+133 error type unexpected_token
+134 verbose exit [ 1, true ]
