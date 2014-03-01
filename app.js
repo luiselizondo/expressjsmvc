@@ -7,17 +7,19 @@ var express = require("express");
 var config = require("./config/config.json");
 var app = module.exports = exports = express();
 var path = require("path");
-var multiViews = require('./lib/viewMultiple')(app);
-var addView = require("./lib/addView");
+var include = require("include");
+var mvc = include.lib("mvc");
 var flash = require("express-flash");
 
 // Alloy all configuration to be available in app.config
 app.config = config;
 
 // all environments
+mvc.EnableMultipeViewsFolders(app);
 app.set('port', process.env.PORT || 3000);
 app.set('views', [path.join(__dirname, 'views')]);
 app.set('view engine', 'jade');
+app.locals.basedir = path.join(__dirname, 'views');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -34,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 var modules = config.modules;
 modules.forEach(function(module) {
-	addView(app, path.join(__dirname, "modules/" + module));
+	mvc.addView(app, path.join(__dirname, "modules", module));
 });
 
 // development only
