@@ -47,8 +47,15 @@ program.template = 'jade';
 var root = {
   start: readFile("start.js"),
   app: readFile("app.js"),
-  gitignore: readFile(".gitignore")
 }
+
+root.gitignore = [
+    'public/vendor'
+  , 'node_modules'
+  , 'data'
+  , 'data/*'
+  , 'config/config.json'
+].join(eol);
 
 var lib = {
   secure: readFile("lib/secure.js"),
