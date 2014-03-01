@@ -1,7 +1,0 @@
-{
-	"mongodburi": "mongodb://localhost/expressmvc",
-	"secretKey": "your-secret-key-goes-here",
-	"modules": [
-		"frontpage"
-	]
-}

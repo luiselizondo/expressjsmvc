@@ -34,6 +34,9 @@ program
 
 program.parse(process.argv);
 
+// passed as the path
+var application_name = program.args.shift() || '.';
+
 // end-of-line code
 var eol = os.EOL
 
@@ -44,12 +47,8 @@ program.template = 'jade';
 var root = {
   start: readFile("start.js"),
   app: readFile("app.js"),
-  bower: readFile("bower.json"),
-  bowerrc: readFile(".bowerrc"),
   gitignore: readFile(".gitignore")
 }
-
-var config = readFile("config/config.example.json");
 
 var lib = {
   secure: readFile("lib/secure.js"),
@@ -114,8 +113,6 @@ function createApplicationAt(path) {
   mkdir(path, function(){
     write(path + '/start.js', root.start);
     write(path + '/app.js', root.app);
-    write(path + '/bower.json', root.bower);
-    write(path + '/.bowerrc', root.bowerrc);
     write(path + '/.gitignore', root.gitignore);
 
     mkdir(path + '/public');
@@ -126,10 +123,6 @@ function createApplicationAt(path) {
     });
 
     mkdir(path + "/modules", function() {});
-
-    mkdir(path + "/config", function() {
-      write(path + "/config/config.json", config);
-    });
 
     mkdir(path + "/lib", function() {
       write(path + "/lib/secure.js", lib.secure);
@@ -173,6 +166,43 @@ function createApplicationAt(path) {
     }
 
     write(path + '/expressmvc.json', JSON.stringify(expressmvc, null, 2));
+
+    // config.json
+    var configFile = {
+      mongodburi: "mongodb://localhost/expressmvc",
+      secretKey: "your-secret-key-goes-here",
+      modules: [
+        "frontpage"
+      ]
+    }
+
+    mkdir(path + "/config", function() {
+      write(path + '/config/config.json', JSON.stringify(configFile, null, 2));
+    });
+
+    // bowerrc
+    var bowerrc = {
+      "directory": "public/vendor"
+    }
+
+    write(path + '/.bowerrc', JSON.stringify(bowerrc, null, 2));
+
+    // bower.json
+    var bowerjson = {
+      name: application_name,
+      version: "0.1.0",
+      main: "public/css/style.css",
+      dependencies: {
+        "jquery": "1.11.0",
+        "bootstrap": "3.1.0",
+        "backbone": "1.1.0",
+        "underscore": "1.5.2",
+        "momentjs": "~2.5.1"
+      }
+    }
+
+    write(path + '/bower.json', JSON.stringify(bowerjson, null, 2));    
+
   });
 }
 
