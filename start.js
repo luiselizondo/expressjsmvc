@@ -1,11 +1,12 @@
 var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
-var app = require("./app");
+var include = require("include");
+var app = include.app();
 var config = app.config;
 
 var server = http.createServer(app);
-var io = require("./lib/socket")(server);
+var io = include.lib("socket")(server);
 var fs = require("fs");
 mongoose.connect(config.mongodburi);
 

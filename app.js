@@ -4,10 +4,10 @@
  */
 
 var express = require("express");
-var config = require("./config/config.json");
+var include = require("include");
+var config = include.path("config", "config.json");
 var app = module.exports = exports = express();
 var path = require("path");
-var include = require("include");
 var mvc = include.lib("mvc");
 var flash = require("express-flash");
 
