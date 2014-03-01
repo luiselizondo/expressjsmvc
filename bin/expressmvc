@@ -7,7 +7,8 @@
 var program = require('commander')
   , mkdirp = require('mkdirp')
   , pkg = require('../package.json')
-  , version = pkg.version // version of express and expressmvc must match
+  , version = pkg.version
+  , expressVersion = "3.4.8",
   , npath = require("path")
   , installModules = require("./lib/install-modules")
   , os = require('os')
@@ -150,16 +151,16 @@ function createApplicationAt(path) {
       , private: true
       , scripts: { start: 'node start.js' }
       , dependencies: {
-        express: version
+        express: expressVersion
       }
     }
 
-    pkg.dependencies["expressmvc"] = "*";
+    pkg.dependencies["expressjsmvc"] = "*";
     pkg.dependencies["mongoose"] = "*";
     pkg.dependencies["socket.io"] = "*";
     pkg.dependencies["moment"] = "*";
     pkg.dependencies["express-flash"] = "0.0.2";
-    pkg.dependencies["include"] = "git://github.com/luiselizondo/include.git";
+    pkg.dependencies["includemvc"] = "git://github.com/luiselizondo/include.git";
 
     if (program.template) pkg.dependencies[program.template] = '*';
 
