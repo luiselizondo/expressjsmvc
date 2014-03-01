@@ -15,8 +15,5 @@
     "passport": "*",
     "passport-local": "*",
     "include": "git://github.com/luiselizondo/include.git"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.2"
   }
 }
