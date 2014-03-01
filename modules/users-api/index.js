@@ -1,6 +1,9 @@
-var app = require("../../app");
-var controller = require("./controllers");
-var Model = require("./models");
+var include = require("include");
+var app = include.app();
+var controller = include.controller("users-api");
+var Model = include.model("users-api");
+var Secure = include.lib("secure");
+var secure = new Secure();
 
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
@@ -17,12 +20,14 @@ passport.use(new LocalStrategy(
           message: 'Incorrect username.' 
         });
       }
-      if (!user.validPassword(password)) {
+      if (secure.encrypt(password) != user.password) {
         return next(null, false, {
           message: 'Incorrect password.' 
         });
       }
-      return next(null, user);
+      if (secure.encrypt(password) == user.password) {
+        return next(null, user);
+      }
     });
   }
 ));

@@ -1,6 +1,7 @@
-var app = require("../../../app");
-var Model = require("../models");
-var Secure = require("../../../lib/secure");
+var include = require("include");
+var app = include.app();
+var Model = include.model("users-api");
+var Secure = include.lib("secure");
 var secure = new Secure();
 
 exports = module.exports;
@@ -8,7 +9,7 @@ exports = module.exports;
 /**
  * Get one user
  */
-exports.getUser = function(req, res) {  
+exports.getUser = function(req, res) {
   var id = req.params.id;
 	Model.findOne({_id: id}, function(err, result) {
 		if(err) {
