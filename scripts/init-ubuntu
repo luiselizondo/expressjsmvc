@@ -15,7 +15,7 @@
 ### END INIT INFO
 
 ENV=production
-NAME=simplelogs
+NAME=expressmvc
 PM2=/usr/lib/node_modules/pm2/bin/pm2
 NODE=/usr/bin/nodejs
 USER=root
