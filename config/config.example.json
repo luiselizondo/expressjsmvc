@@ -1,7 +1,7 @@
 {
 	"mongodburi": "mongodb://localhost/expressmvc",
-	"secretKey": "123",
+	"secretKey": "your-secret-key-goes-here",
 	"modules": [
-		"users-api"
+		"frontpage"
 	]
 }
