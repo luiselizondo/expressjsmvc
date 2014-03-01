@@ -1,0 +1,5 @@
+function installModules() {
+	
+}
+
+module.exports = installModules;

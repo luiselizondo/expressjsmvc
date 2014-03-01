@@ -1,0 +1,243 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander')
+  , mkdirp = require('mkdirp')
+  , pkg = require('../package.json')
+  , version = pkg.version // version of express and expressmvc must match
+  , npath = require("path")
+  , installModules = require("./lib/install-modules")
+  , os = require('os')
+  , fs = require('fs');
+
+// CLI
+program
+  .version(version)
+
+program
+  .command("install [path]")
+  .description("install the application")
+  .option('-f, --force', 'force on non-empty directory')
+  .action(function(path, options) {
+    createApplication(path);
+  })
+
+program
+  .command("install-modules")
+  .description("install modules in .expressmvc")
+  .action(function() {
+    installModules();
+  })
+
+program.parse(process.argv);
+
+// end-of-line code
+var eol = os.EOL
+
+// Template engine
+program.template = 'jade';
+
+// Define source files to duplicate
+var root = {
+  start: readFile("start.js"),
+  app: readFile("app.js"),
+  bower: readFile("bower.json"),
+  bowerrc: readFile(".bowerrc"),
+  gitignore: readFile(".gitignore")
+}
+
+var modules = {
+  frontpage: {
+    index: readFile("modules/frontpage/index.js"),
+    controllers: {
+      index: readFile("modules/frontpage/controllers/index.js")
+    },
+    views: {
+      frontpage: readFile("modules/frontpage/views/frontpage.jade")
+    }
+  }
+}
+
+var config = readFile("config/config.example.json");
+
+var lib = {
+  secure: readFile("lib/secure.js"),
+  socket: readFile("lib/socket.js")
+}
+
+var views = {
+  layout: readFile("views/layout.jade"),
+  header: readFile("views/header.jade"),
+  scripts: readFile("views/scripts.jade"),
+  styles: readFile("views/styles.jade")
+}
+
+var css = readFile("public/css/style.css");
+
+// Generate application
+function createApplication(path) {
+  emptyDirectory(path, function(empty){
+    if (empty || program.force) {
+      createApplicationAt(path);
+    } else {
+      program.confirm('destination is not empty, continue? ', function(ok){
+        if (ok) {
+          process.stdin.destroy();
+          createApplicationAt(path);
+        } else {
+          abort('aborting');
+        }
+      });
+    }
+  });
+};
+
+/** 
+ * Reads a file 
+ */
+function readFile(filename) {
+  var filepath = npath.join(__dirname, "..", filename);
+  return fs.readFileSync(filepath);
+}
+
+/**
+ * Create application at the given directory `path`.
+ *
+ * @param {String} path
+ */
+function createApplicationAt(path) {
+  console.log();
+  console.log('   creating expressmvc application:');
+  console.log();
+
+  process.on('exit', function(){
+    console.log();
+    console.log('   install dependencies:');
+    console.log('     $ cd %s && npm install', path);
+    console.log();
+    console.log('   run the app:');
+    console.log('     $ node start');
+    console.log();
+  });
+
+  mkdir(path, function(){
+    write(path + '/start.js', root.start);
+    write(path + '/app.js', root.app);
+    write(path + '/bower.json', root.bower);
+    write(path + '/.bowerrc', root.bowerrc);
+    write(path + '/.gitignore', root.gitignore);
+
+    mkdir(path + '/public');
+    mkdir(path + '/public/javascripts');
+    mkdir(path + '/public/images');
+    mkdir(path + '/public/css', function(){
+      write(path + '/public/css/style.css', css);
+    });
+
+    mkdir(path + "/modules", function() {
+      mkdir(path + "/modules/frontpage", function() {
+        write(path + "/modules/frontpage/index.js", modules.frontpage.index);
+        mkdir(path + "/modules/frontpage/controllers", function() {
+          write(path + "/modules/frontpage/controllers/index.js", modules.frontpage.controllers.index);
+        })
+
+        mkdir(path + "/modules/frontpage/views", function() {
+          write(path + "/modules/frontpage/views/frontpage.jade", modules.frontpage.views.frontpage);
+        })
+      })
+    });
+
+    mkdir(path + "/config", function() {
+      write(path + "/config/config.json", config);
+    });
+
+    mkdir(path + "/lib", function() {
+      write(path + "/lib/secure.js", lib.secure);
+      write(path + "/lib/socket.js", lib.socket);
+    });
+
+    mkdir(path + "/views", function() {
+      write(path + "/views/layout.jade", views.layout);
+      write(path + "/views/header.jade", views.header);
+      write(path + "/views/scripts.jade", views.scripts);
+      write(path + "/views/styles.jade", views.styles);
+    });
+
+    // package.json
+    var pkg = {
+        name: 'application-name'
+      , version: '0.0.1'
+      , private: true
+      , scripts: { start: 'node start.js' }
+      , dependencies: {
+        express: version
+      }
+    }
+
+    pkg.dependencies["expressmvc"] = "*";
+    pkg.dependencies["mongoose"] = "*";
+    pkg.dependencies["socket.io"] = "*";
+    pkg.dependencies["moment"] = "*";
+    pkg.dependencies["express-flash"] = "0.0.2";
+    pkg.dependencies["include"] = "git://github.com/luiselizondo/include.git";
+
+    if (program.template) pkg.dependencies[program.template] = '*';
+
+    write(path + '/package.json', JSON.stringify(pkg, null, 2));
+  });
+}
+
+/**
+ * Check if the given directory `path` is empty.
+ *
+ * @param {String} path
+ * @param {Function} fn
+ */
+
+function emptyDirectory(path, fn) {
+  fs.readdir(path, function(err, files){
+    if (err && 'ENOENT' != err.code) throw err;
+    fn(!files || !files.length);
+  });
+}
+
+/**
+ * echo str > path.
+ *
+ * @param {String} path
+ * @param {String} str
+ */
+
+function write(path, str) {
+  fs.writeFile(path, str);
+  console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+}
+
+/**
+ * Mkdir -p.
+ *
+ * @param {String} path
+ * @param {Function} fn
+ */
+
+function mkdir(path, fn) {
+  mkdirp(path, 0755, function(err){
+    if (err) throw err;
+    console.log('   \033[36mcreate\033[0m : ' + path);
+    fn && fn();
+  });
+}
+
+/**
+ * Exit with the given `str`.
+ *
+ * @param {String} str
+ */
+
+function abort(str) {
+  console.error(str);
+  process.exit(1);
+}
