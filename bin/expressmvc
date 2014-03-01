@@ -27,7 +27,7 @@ program
 
 program
   .command("install-modules")
-  .description("install modules in .expressmvc")
+  .description("install modules in expressmvc.json")
   .action(function() {
     installModules();
   })
@@ -187,6 +187,15 @@ function createApplicationAt(path) {
     if (program.template) pkg.dependencies[program.template] = '*';
 
     write(path + '/package.json', JSON.stringify(pkg, null, 2));
+
+    // expresmvc.json
+    var expressmvc = {
+      "modules": {
+        "frontpage": "git://github.com/luiselizondo/expressmvc-frontpage.git"
+      }
+    }
+
+    write(path + '/expressmvc.json', JSON.stringify(expressmvc, null, 2));
   });
 }
 
