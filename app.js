@@ -8,7 +8,7 @@ var include = require("include");
 var config = include.path("config", "config.json");
 var app = module.exports = exports = express();
 var path = require("path");
-var mvc = include.lib("mvc");
+var mvc = require("expressmvc");
 var flash = require("express-flash");
 
 // Alloy all configuration to be available in app.config
