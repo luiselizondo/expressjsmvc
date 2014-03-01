@@ -49,18 +49,6 @@ var root = {
   gitignore: readFile(".gitignore")
 }
 
-var modules = {
-  frontpage: {
-    index: readFile("modules/frontpage/index.js"),
-    controllers: {
-      index: readFile("modules/frontpage/controllers/index.js")
-    },
-    views: {
-      frontpage: readFile("modules/frontpage/views/frontpage.jade")
-    }
-  }
-}
-
 var config = readFile("config/config.example.json");
 
 var lib = {
@@ -137,18 +125,7 @@ function createApplicationAt(path) {
       write(path + '/public/css/style.css', css);
     });
 
-    mkdir(path + "/modules", function() {
-      mkdir(path + "/modules/frontpage", function() {
-        write(path + "/modules/frontpage/index.js", modules.frontpage.index);
-        mkdir(path + "/modules/frontpage/controllers", function() {
-          write(path + "/modules/frontpage/controllers/index.js", modules.frontpage.controllers.index);
-        })
-
-        mkdir(path + "/modules/frontpage/views", function() {
-          write(path + "/modules/frontpage/views/frontpage.jade", modules.frontpage.views.frontpage);
-        })
-      })
-    });
+    mkdir(path + "/modules", function() {});
 
     mkdir(path + "/config", function() {
       write(path + "/config/config.json", config);
@@ -191,7 +168,7 @@ function createApplicationAt(path) {
     // expresmvc.json
     var expressmvc = {
       "modules": {
-        "frontpage": "git://github.com/luiselizondo/expressmvc-frontpage.git"
+        "frontpage": "http://github.com/luiselizondo/expressmvc-frontpage.git"
       }
     }
 
