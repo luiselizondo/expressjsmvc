@@ -1,7 +1,7 @@
 {
   "name": "expressjsmvc",
   "description": "An Express.js application organized in an MVC way with extra helpers and utilities",
-  "version": "3.4.10",
+  "version": "3.4.11",
   "author": "Luis Elizondo <lelizondo@gmail.com>",
   "scripts": {
     "start": "node start.js"
