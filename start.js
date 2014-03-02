@@ -1,7 +1,7 @@
 var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
-var include = require("include");
+var include = require("includemvc");
 var app = include.app();
 var config = app.config;
 

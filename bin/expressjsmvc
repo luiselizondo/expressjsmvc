@@ -28,7 +28,7 @@ program
 
 program
   .command("install-modules")
-  .description("install modules in expressmvc.json")
+  .description("install modules in expressjsmvc.json")
   .action(function() {
     installModules();
   })
@@ -105,7 +105,7 @@ function readFile(filename) {
  */
 function createApplicationAt(path) {
   console.log();
-  console.log('   creating expressmvc application:');
+  console.log('   creating expressjsmvc application:');
   console.log();
 
   process.on('exit', function(){
@@ -160,24 +160,24 @@ function createApplicationAt(path) {
     pkg.dependencies["socket.io"] = "*";
     pkg.dependencies["moment"] = "*";
     pkg.dependencies["express-flash"] = "0.0.2";
-    pkg.dependencies["includemvc"] = "git://github.com/luiselizondo/include.git";
+    pkg.dependencies["includemvc"] = "*";
 
     if (program.template) pkg.dependencies[program.template] = '*';
 
     write(path + '/package.json', JSON.stringify(pkg, null, 2));
 
     // expresmvc.json
-    var expressmvc = {
+    var expressjsmvc = {
       "modules": {
         "frontpage": "http://github.com/luiselizondo/expressmvc-frontpage.git"
       }
     }
 
-    write(path + '/expressmvc.json', JSON.stringify(expressmvc, null, 2));
+    write(path + '/expressjsmvc.json', JSON.stringify(expressjsmvc, null, 2));
 
     // config.json
     var configFile = {
-      mongodburi: "mongodb://localhost/expressmvc",
+      mongodburi: "mongodb://localhost/expressjsmvc",
       secretKey: "your-secret-key-goes-here",
       modules: [
         "frontpage"

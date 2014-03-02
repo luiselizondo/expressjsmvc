@@ -8,11 +8,11 @@ The goal of ExpressMVC is to simplify common tasks and make your application mor
 
 ### Create your application
 
-	expressmvc install application-name
+	expressjsmvc install application-name
 
-### Download the modules defined in expressmvc.json
+### Download the modules defined in expressjsmvc.json
 	
-	expressmvc install-modules
+	expressjsmvc install-modules
 
 ### Install required packages
 	cd application-name && npm install
@@ -51,7 +51,7 @@ ExpressMVC lets you bind events to the application and trigger them from anywher
 
 Example
 
-	var include = require("include");
+	var include = require("includemvc");
 	var app = include.app();
 
 	app.on("myevent", function(data) {
@@ -64,7 +64,7 @@ Example
 The framework comes out of the box with a bower file so you can run bower install and automatically include jQuery, Bootstrap, Backbone.js and Underscore.js
 
 #### Module package manager
-ExpressMVC provides you with an easy way to define the needed modules by your application. Define the modules you need to download in expressmvc.json. We use git to download the modules so you need to have it installed first. All defined modules will be downloaded into the modules directory.
+ExpressMVC provides you with an easy way to define the needed modules by your application. Define the modules you need to download in expressjsmvc.json. We use git to download the modules so you need to have it installed first. All defined modules will be downloaded into the modules directory.
 
 #### Enable or disable modules easily
 Forget about requiring your modules in your application, all you need to do is add them to the config.modules array and they will be enabled.

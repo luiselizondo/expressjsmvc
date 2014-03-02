@@ -1,2 +1,2 @@
-// Require lib/expressmvc to make it module
-module.exports = require("./lib/expressmvc");
+// Require lib/expressjsmvc to make it module
+module.exports = require("./lib/expressjsmvc");

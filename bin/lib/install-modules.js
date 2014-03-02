@@ -48,8 +48,8 @@ function checkIfModuleInstalled(dir, callback) {
  * main exportable function 
  */
 function installModules() {
-	var expressmvc = fs.readFileSync("expressmvc.json", {encoding: "utf-8"});
-	var file = JSON.parse(expressmvc);
+	var expressjsmvc = fs.readFileSync("expressjsmvc.json", {encoding: "utf-8"});
+	var file = JSON.parse(expressjsmvc);
 	var modules = file.modules;
 	
 	// Define the base path

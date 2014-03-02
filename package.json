@@ -1,7 +1,7 @@
 {
   "name": "expressjsmvc",
   "description": "An Express.js application organized in an MVC way with extra helpers and utilities",
-  "version": "3.4.11",
+  "version": "3.4.12",
   "author": "Luis Elizondo <lelizondo@gmail.com>",
   "scripts": {
     "start": "node start.js"
@@ -12,6 +12,7 @@
     "sinatra",
     "web",
     "mvc",
+    "expressjsmvc",
     "expressmvc"
   ],
   "dependencies": {
@@ -29,13 +30,13 @@
     "debug": ">= 0.7.3 < 1",
     "git-wrapper2": "0.2.5"
   },
-  "repository": "git://github.com/luiselizondo/expressmvc",
+  "repository": "git://github.com/luiselizondo/expressjsmvc",
   "engines": {
     "node": ">= 0.8.0"
   },
   "main": "index",
   "bin": {
-    "expressmvc": "./bin/expressmvc"
+    "expressjsmvc": "./bin/expressjsmvc"
   },
   "license": "MIT"
 }
