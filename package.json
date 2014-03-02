@@ -28,7 +28,8 @@
     "cookie-signature": "1.0.3",
     "merge-descriptors": "0.0.2",
     "debug": ">= 0.7.3 < 1",
-    "git-wrapper2": "0.2.5"
+    "git-wrapper2": "0.2.5",
+    "colors": "0.6.2"
   },
   "repository": "git://github.com/luiselizondo/expressjsmvc",
   "engines": {

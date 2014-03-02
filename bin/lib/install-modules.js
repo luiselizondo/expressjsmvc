@@ -1,6 +1,7 @@
 var path = require("path")
 	, Git = require("git-wrapper2")
 	, git = new Git()
+	, colors = require("colors")
   , fs = require('fs');
 
 /**
@@ -9,7 +10,6 @@ var path = require("path")
  * @param {String} path
  * @param {Function} fn
  */
-
 function emptyDirectory(path, fn) {
   fs.readdir(path, function(err, files){
     if (err && 'ENOENT' != err.code) throw err;
@@ -30,7 +30,9 @@ function cloneProject(dir, uri) {
 			});
 		}
 		else {
-			console.log("Destination for %s not empty", dir);
+			console.log();
+			console.log("   destination not empty : %s ".red, dir);
+			console.log();
 		}
 	});
 }
@@ -64,7 +66,9 @@ function installModules() {
 	});
 
 	process.on("exit", function() {
-		console.log("Finished downloading modules");
+		console.log();
+		console.log("   finished downloading all modules, don't forget to enable them in config/config.json".green);
+		console.log();
 	})
 
 	git.on("clone", function(repo, dir) {
@@ -74,7 +78,9 @@ function installModules() {
 				cloneProject(dir, repo);
 			}
 			else {
-				console.log("Module %s downloaded in %s", repo, dir);
+				console.log();
+				console.log('   downloaded module : %s'.blue, repo);
+				console.log();
 			}
 		})
 	})
