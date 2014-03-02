@@ -30,7 +30,7 @@ function cloneProject(dir, uri) {
 			});
 		}
 		else {
-			console.log("Destination for %s not empty", modulePath);
+			console.log("Destination for %s not empty", dir);
 		}
 	});
 }
