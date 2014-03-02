@@ -10,12 +10,13 @@ The goal of ExpressMVC is to simplify common tasks and make your application mor
 
 	expressjsmvc install application-name
 
+### Install required packages
+
+	cd application-name && npm install
+
 ### Download the modules defined in expressjsmvc.json
 	
 	expressjsmvc install-modules
-
-### Install required packages
-	cd application-name && npm install
 
 ### Start your application
 	

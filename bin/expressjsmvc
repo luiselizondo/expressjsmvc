@@ -46,8 +46,8 @@ program.template = 'jade';
 
 // Define source files to duplicate
 var root = {
-  start: readFile("start.js"),
-  app: readFile("app.js"),
+  start: readFile("core/start.js"),
+  app: readFile("core/app.js"),
 }
 
 root.gitignore = [
@@ -59,18 +59,18 @@ root.gitignore = [
 ].join(eol);
 
 var lib = {
-  secure: readFile("lib/secure.js"),
-  socket: readFile("lib/socket.js")
+  secure: readFile("core/lib/secure.js"),
+  socket: readFile("core/lib/socket.js")
 }
 
 var views = {
-  layout: readFile("views/layout.jade"),
-  header: readFile("views/header.jade"),
-  scripts: readFile("views/scripts.jade"),
-  styles: readFile("views/styles.jade")
+  layout: readFile("core/views/layout.jade"),
+  header: readFile("core/views/header.jade"),
+  scripts: readFile("core/views/scripts.jade"),
+  styles: readFile("core/views/styles.jade")
 }
 
-var css = readFile("public/css/style.css");
+var css = readFile("core/public/css/style.css");
 
 // Generate application
 function createApplication(path) {
@@ -112,6 +112,11 @@ function createApplicationAt(path) {
     console.log();
     console.log('   install dependencies:');
     console.log('     $ cd %s && npm install', path);
+    console.log();
+    console.log('   install modules defined in expressjsmvc.json:');
+    console.log('     $ expressjsmvc install-modules');
+    console.log();
+    console.log('   edit config/config.json:');
     console.log();
     console.log('   run the app:');
     console.log('     $ node start');
@@ -179,6 +184,7 @@ function createApplicationAt(path) {
     var configFile = {
       mongodburi: "mongodb://localhost/expressjsmvc",
       secretKey: "your-secret-key-goes-here",
+      enableIO: true,
       modules: [
         "frontpage"
       ]

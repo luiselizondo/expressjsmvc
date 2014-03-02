@@ -4,10 +4,12 @@ var mongoose = require('mongoose');
 var include = require("includemvc");
 var app = include.app();
 var config = app.config;
-
 var server = http.createServer(app);
-var io = include.lib("socket")(server);
-var fs = require("fs");
+
+if(config.enableIO) {
+	var io = include.lib("socket")(server);
+}
+
 mongoose.connect(config.mongodburi);
 
 /** 
@@ -20,5 +22,5 @@ modules.forEach(function(module) {
 });
 
 server.listen(app.get('port'), function(){
-  console.log('ExpressMVC server listening on port ' + app.get('port'));
+  console.log('Express.js MVC server listening on port ' + app.get('port'));
 });
