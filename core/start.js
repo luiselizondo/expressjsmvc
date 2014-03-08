@@ -13,12 +13,12 @@ if(config.enableIO) {
 mongoose.connect(config.mongodburi);
 
 /** 
- * Load all modules enabled in config.modules
- * The module must have an index.js present 
+ * Load all components enabled in config.components
+ * The component must have an index.js present 
  */
-var modules = config.modules;
-modules.forEach(function(module) {
-	app.use(require("./modules/" + module));
+var components = config.components;
+components.forEach(function(component) {
+	app.use(require("./components/" + component));
 });
 
 server.listen(app.get('port'), function(){

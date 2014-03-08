@@ -10,7 +10,7 @@ var program = require('commander')
   , version = pkg.version
   , expressVersion = "3.4.8"
   , npath = require("path")
-  , installModules = require("./lib/install-modules")
+  , installComponents = require("./lib/install-components")
   , os = require('os')
   , fs = require('fs');
 
@@ -19,18 +19,18 @@ program
   .version(version)
 
 program
-  .command("install [path]")
-  .description("install the application")
+  .command("create [path]")
+  .description("creates the application")
   .option('-f, --force', 'force on non-empty directory')
   .action(function(path, options) {
     createApplication(path);
   })
 
 program
-  .command("install-modules")
-  .description("install modules in expressjsmvc.json")
+  .command("install")
+  .description("install components in expressjsmvc.json")
   .action(function() {
-    installModules();
+    installComponents();
   })
 
 program.parse(process.argv);
@@ -113,10 +113,8 @@ function createApplicationAt(path) {
     console.log('   install dependencies:');
     console.log('     $ cd %s && npm install', path);
     console.log();
-    console.log('   install modules defined in expressjsmvc.json:');
-    console.log('     $ expressjsmvc install-modules');
-    console.log();
-    console.log('   edit config/config.json:');
+    console.log('   install components defined in expressjsmvc.json:');
+    console.log('     $ expressjsmvc install');
     console.log();
     console.log('   run the app:');
     console.log('     $ node start');
@@ -135,7 +133,7 @@ function createApplicationAt(path) {
       write(path + '/public/css/style.css', css);
     });
 
-    mkdir(path + "/modules", function() {});
+    mkdir(path + "/components", function() {});
 
     mkdir(path + "/lib", function() {
       write(path + "/lib/secure.js", lib.secure);
@@ -173,7 +171,7 @@ function createApplicationAt(path) {
 
     // expresmvc.json
     var expressjsmvc = {
-      "modules": {
+      "components": {
         "frontpage": "http://github.com/luiselizondo/expressmvc-frontpage.git"
       }
     }
@@ -185,7 +183,7 @@ function createApplicationAt(path) {
       mongodburi: "mongodb://localhost/expressjsmvc",
       secretKey: "your-secret-key-goes-here",
       enableIO: true,
-      modules: [
+      components: [
         "frontpage"
       ]
     }

@@ -1,5 +1,5 @@
 /**
- * @file exposes the app object instantiated so other modules can
+ * @file exposes the app object instantiated so other components and files can
  * require it and share events across the entire application
  */
 
@@ -32,11 +32,11 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 /** 
- * Autodetect all views in modules 
+ * Autodetect all views in components 
  */
-var modules = config.modules;
-modules.forEach(function(module) {
-	mvc.addView(app, path.join(__dirname, "modules", module));
+var components = config.components;
+components.forEach(function(component) {
+	mvc.addView(app, path.join(__dirname, "components", component));
 });
 
 // development only

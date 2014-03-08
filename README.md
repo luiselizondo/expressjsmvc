@@ -8,15 +8,15 @@ The goal of ExpressMVC is to simplify common tasks and make your application mor
 
 ### Create your application
 
-	expressjsmvc install application-name
+	expressjsmvc create application-name
 
 ### Install required packages
 
 	cd application-name && npm install
 
-### Download the modules defined in expressjsmvc.json
+### Download the components defined in expressjsmvc.json and install dependencies
 	
-	expressjsmvc install-modules
+	expressjsmvc install
 
 ### Start your application
 	
@@ -26,26 +26,26 @@ The goal of ExpressMVC is to simplify common tasks and make your application mor
 ExpressMVC offers some features out of the box that you might find interesting:
 
 #### Modular structure
-ExpressMVC lets you organize your application in modules that you can reuse. This modules are organized in controllers, models and views and file to define your routes.
+ExpressMVC lets you organize your application in components that you can reuse. This components are organized in controllers, models and views and file to define your routes.
 
-Structure of a module
+Structure of a component
 
-	/modules/blog
+	/components/blog
 		/controllers
 			index.js <- This file contains your controller
 		/models
-			index.js <- This file contains the models for your module
+			index.js <- This file contains the models for your component
 		/views
 			blogPage.jade <- This file is a blog page
 		index.js <- Define your routes here
 
 #### Views separation
-With ExpressMVC you can separate your views and package them into your modules. You can access your /views directory without having to use relative paths, example:
+With ExpressMVC you can separate your views and package them into your components. You can access your /views directory without having to use relative paths, example:
 
 	include /layout
 
-#### Easy require for both modules, libraries and 
-You can require any module from other modules as long as you organize your modules in the propossed structure. See an example in the frontpage module.
+#### Easy require for both components, libraries and 
+You can require any component from other components as long as you organize your components in the propossed structure. See an example in the frontpage component.
 
 #### Event driven 
 ExpressMVC lets you bind events to the application and trigger them from anywhere really easy.
@@ -65,13 +65,13 @@ Example
 The framework comes out of the box with a bower file so you can run bower install and automatically include jQuery, Bootstrap, Backbone.js and Underscore.js
 
 #### Module package manager
-ExpressMVC provides you with an easy way to define the needed modules by your application. Define the modules you need to download in expressjsmvc.json. We use git to download the modules so you need to have it installed first. All defined modules will be downloaded into the modules directory.
+ExpressMVC provides you with an easy way to define the needed components by your application. Define the components you need to download in expressjsmvc.json. We use git to download the components so you need to have it installed first. All defined components will be downloaded into the components directory.
 
-#### Enable or disable modules easily
-Forget about requiring your modules in your application, all you need to do is add them to the config.modules array and they will be enabled.
+#### Enable or disable components easily
+Forget about requiring your components in your application, all you need to do is add them to the config.components array and they will be enabled.
 
 ### ToDo
-- download modules dependencies
+- download components dependencies
 
 ### License
 The MIT License (MIT)
